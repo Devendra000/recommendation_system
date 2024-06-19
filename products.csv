@@ -1,0 +1,101 @@
+id,name,category,price,level_of_study
+1,Physics Textbook,Books,29.99,Undergraduate
+2,Advanced Mathematics,Books,39.99,Graduate
+3,Intro to Programming,Books,19.99,Beginner
+4,Biology Lab Kit,Lab Equipment,59.99,Undergraduate
+5,Chemistry Set,Lab Equipment,49.99,High School
+6,Mechanical Pencil,Stationery,2.99,All Levels
+7,Engineering Drawing Board,Stationery,79.99,Graduate
+8,Graphing Calculator,Electronics,99.99,High School
+9,Laptop,Electronics,499.99,All Levels
+10,Study Lamp,Furniture,19.99,All Levels
+11,Organic Chemistry Book,Books,34.99,Undergraduate
+12,Data Structures,Books,24.99,Graduate
+13,Introduction to Algorithms,Books,89.99,Graduate
+14,Physics Lab Kit,Lab Equipment,69.99,Undergraduate
+15,Biology Textbook,Books,29.99,High School
+16,Geology Hammer,Lab Equipment,25.99,Undergraduate
+17,Scientific Calculator,Electronics,29.99,High School
+18,Tablet,Electronics,199.99,All Levels
+19,Ergonomic Chair,Furniture,119.99,All Levels
+20,Desk Organizer,Stationery,15.99,All Levels
+21,Intro to Chemistry,Books,19.99,Beginner
+22,Physics Workbook,Books,14.99,Undergraduate
+23,Math Lab Kit,Lab Equipment,39.99,High School
+24,Advanced Biology,Books,49.99,Graduate
+25,Computer Science Basics,Books,34.99,Beginner
+26,Electronics Toolkit,Lab Equipment,89.99,Graduate
+27,Printer,Electronics,129.99,All Levels
+28,Wireless Mouse,Electronics,19.99,All Levels
+29,Desk Lamp,Furniture,29.99,All Levels
+30,Whiteboard,Stationery,49.99,All Levels
+31,Intro to Machine Learning,Books,59.99,Graduate
+32,Physics Experiment Set,Lab Equipment,79.99,Undergraduate
+33,Advanced Chemistry,Books,44.99,Graduate
+34,Math Textbook,Books,39.99,High School
+35,Robotics Kit,Lab Equipment,99.99,High School
+36,Graph Paper,Stationery,9.99,All Levels
+37,3D Printer,Electronics,299.99,Graduate
+38,Office Desk,Furniture,199.99,All Levels
+39,Sticky Notes,Stationery,3.99,All Levels
+40,Biology Research Kit,Lab Equipment,109.99,Graduate
+41,Statistics Book,Books,29.99,Undergraduate
+42,Coding for Beginners,Books,19.99,Beginner
+43,Chemistry Lab Kit,Lab Equipment,59.99,Undergraduate
+44,Math Workbook,Books,14.99,High School
+45,Fountain Pen,Stationery,9.99,All Levels
+46,Digital Multimeter,Electronics,49.99,Graduate
+47,Office Chair,Furniture,149.99,All Levels
+48,File Cabinet,Furniture,89.99,All Levels
+49,Marker Set,Stationery,12.99,All Levels
+50,Advanced Physics,Books,39.99,Graduate
+51,Microbiology Kit,Lab Equipment,79.99,Undergraduate
+52,Algebra Textbook,Books,29.99,High School
+53,Physics Research Kit,Lab Equipment,99.99,Graduate
+54,Drawing Kit,Stationery,29.99,All Levels
+55,Laser Printer,Electronics,199.99,All Levels
+56,Bluetooth Speaker,Electronics,59.99,All Levels
+57,Standing Desk,Furniture,249.99,All Levels
+58,Scissors,Stationery,4.99,All Levels
+59,Electrical Engineering Book,Books,49.99,Graduate
+60,Chemistry Workbook,Books,19.99,High School
+61,Physics Kit,Lab Equipment,69.99,Undergraduate
+62,Geometry Set,Stationery,9.99,High School
+63,Digital Camera,Electronics,299.99,All Levels
+64,Bookshelf,Furniture,99.99,All Levels
+65,Notebook,Stationery,5.99,All Levels
+66,Biochemistry Book,Books,44.99,Graduate
+67,Lab Coat,Lab Equipment,29.99,Undergraduate
+68,Math Research Kit,Lab Equipment,49.99,Graduate
+69,Calculator,Electronics,19.99,High School
+70,LED Desk Lamp,Furniture,39.99,All Levels
+71,Binder,Stationery,3.99,All Levels
+72,Programming Book,Books,34.99,Undergraduate
+73,Anatomy Lab Kit,Lab Equipment,59.99,Undergraduate
+74,Trigonometry Book,Books,24.99,High School
+75,Paint Set,Stationery,19.99,All Levels
+76,Smartphone,Electronics,699.99,All Levels
+77,Storage Box,Furniture,29.99,All Levels
+78,Paper Clips,Stationery,2.99,All Levels
+79,Economics Textbook,Books,39.99,Undergraduate
+80,Physics Equipment Set,Lab Equipment,89.99,Graduate
+81,Geometry Textbook,Books,29.99,High School
+82,Lab Glassware,Lab Equipment,99.99,Graduate
+83,Stapler,Stationery,5.99,All Levels
+84,Scanner,Electronics,89.99,All Levels
+85,Lamp,Furniture,29.99,All Levels
+86,Highlighter Set,Stationery,7.99,All Levels
+87,Intro to Physics,Books,19.99,Beginner
+88,Biology Equipment Set,Lab Equipment,79.99,Graduate
+89,Math Study Guide,Books,14.99,High School
+90,Mechanical Engineering Kit,Lab Equipment,119.99,Graduate
+91,Pencil Case,Stationery,4.99,All Levels
+92,Smartwatch,Electronics,199.99,All Levels
+93,Couch,Furniture,399.99,All Levels
+94,Tape Dispenser,Stationery,6.99,All Levels
+95,Programming for Kids,Books,24.99,Beginner
+96,Physics Study Guide,Books,19.99,Undergraduate
+97,Chemistry Research Kit,Lab Equipment,99.99,Graduate
+98,Clipboard,Stationery,3.99,All Levels
+99,Wireless Keyboard,Electronics,49.99,All Levels
+100,Desk,Furniture,149.99,All Levels
