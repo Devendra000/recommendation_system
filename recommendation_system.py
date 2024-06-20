@@ -3,6 +3,16 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
+from typing import Union
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
 products = pd.read_csv('products.csv')
 
 tfidf = TfidfVectorizer(stop_words = 'english')
@@ -33,7 +43,8 @@ def sameLevelProducts(idx,cosine_simf = cosine_simf):
   return simL_score
 
 # Create separate lists for prioritizing elements with the second element equal to 1.0
-def getRecommendation(product):
+@app.get("/recommend/{product}")
+def getRecommendation(product:str):
   array1 = sameLevelProducts(product)
   array2 = sameCategoryProducts(product)
   
@@ -69,13 +80,14 @@ def getRecommendation(product):
   combined_array = priority_common + priority_elements + other_elements
   
   # Extract only the first elements
-  first_elements = [item[0] for item in combined_array]
+  first_elements = [item[0] for item in combined_array if item[0]!=indices[product]]
   
   return name[first_elements]
   array = [i[0] for i in combined_array]
   return array
 
-def getRecommendationById(id):
+@app.get("/recommendById/{id}")
+def getRecommendationById(id: int):
   product = name[id]
   array1 = sameLevelProducts(product)
   array2 = sameCategoryProducts(product)
@@ -110,11 +122,10 @@ def getRecommendationById(id):
   
   # Combine the lists: common elements first, then other prioritized elements, then the rest
   combined_array = priority_common + priority_elements + other_elements
-  
   # Extract only the first elements
-  first_elements = [item[0] for item in combined_array]
+  first_elements = [item[0] for item in combined_array if item[0]!=id]
   
-  return name[first_elements]
+  return {"name":name[first_elements]}
   array = [i[0] for i in combined_array]
   return array
 
