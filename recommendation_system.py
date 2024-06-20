@@ -4,6 +4,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
 products = pd.read_csv('products.csv')
+
 tfidf = TfidfVectorizer(stop_words = 'english')
 tfidf_matrix = tfidf.fit_transform(products['category'])
 cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
@@ -70,8 +71,52 @@ def getRecommendation(product):
   # Extract only the first elements
   first_elements = [item[0] for item in combined_array]
   
-  return first_elements
+  return name[first_elements]
+  array = [i[0] for i in combined_array]
+  return array
+
+def getRecommendationById(id):
+  product = name[id]
+  array1 = sameLevelProducts(product)
+  array2 = sameCategoryProducts(product)
+  
+  set1 = set(array1)
+  set2 = set(array2)
+  
+  # Identify common elements with second element value 1.0
+  common_elements = {item for item in set1 & set2 if item[1] == 1.0}
+  
+  # Separate lists
+  priority_common = []
+  priority_elements = []
+  other_elements = []
+  seen = set()
+  
+  # Function to add unique elements to respective lists
+  def add_unique_elements(array):
+      for item in array:
+          if item[0] not in seen:
+              if item in common_elements:
+                  priority_common.append(item)
+              elif item[1] == 1.0:
+                  priority_elements.append(item)
+              else:
+                  other_elements.append(item)
+              seen.add(item[0])
+  
+  # Add elements from both arrays
+  add_unique_elements(array1)
+  add_unique_elements(array2)
+  
+  # Combine the lists: common elements first, then other prioritized elements, then the rest
+  combined_array = priority_common + priority_elements + other_elements
+  
+  # Extract only the first elements
+  first_elements = [item[0] for item in combined_array]
+  
+  return name[first_elements]
   array = [i[0] for i in combined_array]
   return array
 
 recommendation = getRecommendation('Laptop')
+print(recommendation)
