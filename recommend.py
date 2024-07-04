@@ -45,12 +45,13 @@ def getAllProducts():
 
 # get user history
 def userHistory(userId: int):
-    connection = pymysql.connect(host=os.getenv('MYSQL_HOST'),
-                                user=os.getenv('MYSQL_USER'),
-                                password=os.getenv('MYSQL_PASSWORD'),                             
-                                db=os.getenv('MYSQL_DATABASE'),
-                                charset='utf8mb4',
-                                cursorclass=pymysql.cursors.DictCursor) 
+    connection = pymysql.connect(
+                    host=os.getenv('MYSQL_HOST'),
+                    user=os.getenv('MYSQL_USER'),
+                    password=os.getenv('MYSQL_PASSWORD'),                             
+                    db=os.getenv('MYSQL_DATABASE'),
+                    charset='utf8mb4',
+                    cursorclass=pymysql.cursors.DictCursor ) 
 
     try:
         with connection.cursor() as cursor: 
@@ -92,17 +93,18 @@ def calculate_similarity(clicked_category, clicked_level, product_category, prod
 
 # Recommend products based on user's clicked history
 def recommend_products_with_user_history(user_clicked_items, n):
-    print('in rec pro')
+# Convert user_clicked_items to integers
+    user_clicked_items = list(map(int, user_clicked_items))
+
     recommended_products = []
     for product_id in user_clicked_items:
-        
         # Index of the clicked product in the products DataFrame
-        idx = products.index[products['id'] == product_id].tolist()[0]
-        
+        idx = products.index.get_loc(products[products['id'] == product_id].index[0])
+
         clicked_name = products.loc[idx, 'name']
         clicked_category = products.loc[idx, 'category']
         clicked_level = products.loc[idx, 'education_level']
-        
+
         # Calculate similarity scores with all products based on category and education_level
         similarity_scores = []
         for i in range(len(products)):
@@ -129,7 +131,7 @@ def recommend_products_with_user_history(user_clicked_items, n):
             'clicked_product': clicked_name,
             'recommended_products': top_n_recommendations
         })
-        
+
     return recommended_products
 
 
@@ -140,7 +142,7 @@ def recommend_products_with_productId(product_id, n):
     
     print(products)
     # Index of the clicked product in the products DataFrame
-    idx = products.index[products['id'] == product_id].tolist()[0]
+    idx = products.index.get_loc(products[products['id'] == product_id].index[0])
     clicked_name = products.loc[idx, 'name']
     clicked_category = products.loc[idx, 'category']
     clicked_level = products.loc[idx, 'education_level']
@@ -178,11 +180,10 @@ def recommend_products_with_productId(product_id, n):
     
 # Recommend products based on user's clicked history
 @app.get("/recommendItemsForUser/{userId}/{n}")
-def getRecommendation(userId: int, n: int):
+def getRecommendationForUser(userId: int, n: int):
     # return id
     clicked_products = userHistory(userId)
     recommendations = recommend_products_with_user_history(json.loads(clicked_products['clicks'][0]), n)
-    # return recommendations
     recommendation = []
     for rec in recommendations:
         clicked = rec['clicked_product']
