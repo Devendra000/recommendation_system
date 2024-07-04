@@ -29,7 +29,7 @@ id,name,category,price,level_of_study
 28,Wireless Mouse,Electronics,19.99,All Levels
 29,Desk Lamp,Furniture,29.99,All Levels
 30,Whiteboard,Stationery,49.99,All Levels
-31,Intro to Machine Learning,Books,59.99,Graduate
+31,Intro to Machine Learning,Books,59.99,Beginner Graduate
 32,Physics Experiment Set,Lab Equipment,79.99,Undergraduate
 33,Advanced Chemistry,Books,44.99,Graduate
 34,Math Textbook,Books,39.99,High School
